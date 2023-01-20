@@ -42,7 +42,25 @@ public class Main {
         kamaz.stop();
         paz.stop();
         separator();
+        checkTransport(lada, audi, belaz, bmw, maz, laz);
+}
+
+    public static void checkTransport(Transport... transports) {
+        int count = 0;
+        for (Transport transport : transports) {
+            if (!transport.passDiagnostics()) {
+                try {
+                    throw new RuntimeException(transport.getBrand() + " " + transport.getModel() + " не прошел диагностику!");
+                } catch (RuntimeException e) {
+                    System.out.println(e.getMessage());
+                }
+            } else {
+                count++;
+            }
+        }
+        System.out.println("Диагностику прошли " + count + " из " + transports.length + " автомобилей.");
     }
+
     public static void separator() {
         System.out.println();
     }

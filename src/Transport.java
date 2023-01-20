@@ -51,6 +51,15 @@ public abstract class Transport {
     public int hashCode() {
         return Objects.hash(brand, model, engineVolume);
     }
+
+    public Transport() {
+        super();
+        System.out.println("Пройти диагностику");
+    }
+
+    public boolean passDiagnostics() {
+        return false;
+    }
 }
 
 
