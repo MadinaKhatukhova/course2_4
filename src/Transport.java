@@ -60,6 +60,21 @@ public abstract class Transport {
     public boolean passDiagnostics() {
         return false;
     }
+
+    public void passRepair() {
+    }
+
+    public Driver[] getDrivers() {
+        return new Driver[0];
+    }
+
+    public Sponsor[] getSponsors() {
+        return new Sponsor[0];
+    }
+
+    public Mechanic<?>[] getMechanics() {
+        return new Mechanic[0];
+    }
 }
 
 

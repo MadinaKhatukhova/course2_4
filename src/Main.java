@@ -1,5 +1,10 @@
+import java.util.List;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoLicenseException {
+        Mechanic semen = new Mechanic<Car>("Семен Семеныч", "Рога и Копыта");
+        Sponsor aeroflot = new Sponsor("Аэрофлот", 1_000_000);
+
         Car lada = new Car("Lada", "Granta", 1.7f, Car.BodyType.SEDAN);
         Car audi = new Car("Audi", "A8", 3.0f, Car.BodyType.HATCHBACK);
         Car bmw = new Car("BMW", "Z8", 3.5f, Car.BodyType.COUPE);
@@ -15,6 +20,18 @@ public class Main {
         Bus belaz = new Bus("БЕЛаз", "3421", 3.7f, Bus.Capacity.LARGE);
         Bus sobol = new Bus("СОБОЛЬ", "3414", 4.8f, Bus.Capacity.ESPECIALLY_SMALL);
 
+        DriverC<Truck> semenTruck = new DriverC<>("Семен Алексеевич Грузовиков", true, 2);
+        DriverD<Bus> antonBus = new DriverD<>("Антон Антонович Автобусов", true, 5);
+
+        List<Transport> transports = List.of(
+                lada,audi,bmw,kia,
+                laz, maz, gaz, kamaz,
+                gazel, paz, belaz, sobol);
+
+        for (Transport transport : transports) {
+            printInfo(transport);
+        }
+        
         separator();
         System.out.println(lada);
         System.out.println(gaz);
@@ -45,6 +62,23 @@ public class Main {
         checkTransport(lada, audi, belaz, bmw, maz, laz);
 }
 
+        private static void printInfo(Transport transport){
+        separator();
+        System.out.println(transport.getBrand() + " " + transport.getModel());
+        System.out.print("Водитель: ");
+        for (Driver driver : transport.getDrivers()){
+            System.out.println(driver.getName());
+        }
+        System.out.print("Спонсоры: ");
+        for (Sponsor sponsor : transport.getSponsors()){
+            System.out.println(sponsor.getName());
+        }
+        System.out.print("Механики: ");
+        for (Mechanic<?> mechanic : transport.getMechanics()){
+            System.out.println(mechanic.getFullName());
+        }
+        separator();
+    }
     public static void checkTransport(Transport... transports) {
         int count = 0;
         for (Transport transport : transports) {
