@@ -21,6 +21,8 @@ public class Car extends Transport implements Competing {
         PICKUP_TRUCK("Пикап"),
         VAN("Фургон"),
         MINIVAN("Минивэн");
+
+
         private final String rusBodyType;
 
         BodyType(String rusBodyType) {

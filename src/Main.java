@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws NoLicenseException {
@@ -23,79 +23,21 @@ public class Main {
         DriverC<Truck> semenTruck = new DriverC<>("Семен Алексеевич Грузовиков", true, 2);
         DriverD<Bus> antonBus = new DriverD<>("Антон Антонович Автобусов", true, 5);
 
-        List<Transport> transports = List.of(
-                lada,audi,bmw,kia,
-                laz, maz, gaz, kamaz,
-                gazel, paz, belaz, sobol);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Lada");
+        list.add("Audi");
+        list.add("BMW");
+        list.add("Kia");
 
-        for (Transport transport : transports) {
-            printInfo(transport);
-        }
-        
-        separator();
-        System.out.println(lada);
-        System.out.println(gaz);
-        System.out.println(belaz);
-        separator();
-        lada.printType();
-        gaz.printType();
-        belaz.printType();
-        separator();
-        separator();
-        audi.go();
-        maz.go();
-        belaz.go();
-        separator();
-        bmw.bestLapTime();
-        separator();
-        kamaz.pitStop();
-        gazel.pitStop();
-        audi.pitStop();
-        separator();
-        kia.maxSpeed();
-        paz.maxSpeed();
-        separator();
-        lada.stop();
-        kamaz.stop();
-        paz.stop();
-        separator();
-        checkTransport(lada, audi, belaz, bmw, maz, laz);
-}
+        System.out.println(Arrays.toString(list.toArray()));
 
-        private static void printInfo(Transport transport){
-        separator();
-        System.out.println(transport.getBrand() + " " + transport.getModel());
-        System.out.print("Водитель: ");
-        for (Driver driver : transport.getDrivers()){
-            System.out.println(driver.getName());
-        }
-        System.out.print("Спонсоры: ");
-        for (Sponsor sponsor : transport.getSponsors()){
-            System.out.println(sponsor.getName());
-        }
-        System.out.print("Механики: ");
-        for (Mechanic<?> mechanic : transport.getMechanics()){
-            System.out.println(mechanic.getFullName());
-        }
-        separator();
-    }
-    public static void checkTransport(Transport... transports) {
-        int count = 0;
-        for (Transport transport : transports) {
-            if (!transport.passDiagnostics()) {
-                try {
-                    throw new RuntimeException(transport.getBrand() + " " + transport.getModel() + " не прошел диагностику!");
-                } catch (RuntimeException e) {
-                    System.out.println(e.getMessage());
-                }
-            } else {
-                count++;
-            }
-        }
-        System.out.println("Диагностику прошли " + count + " из " + transports.length + " автомобилей.");
-    }
+        Set<String> set = new HashSet<>();
+        set.add("Lada");
+        set.add("Audi");
+        set.add("BMW");
+        set.add("Kia");
 
-    public static void separator() {
-        System.out.println();
-    }
-}
+        System.out.println(Arrays.toString(set.toArray()));
+
+
+}}

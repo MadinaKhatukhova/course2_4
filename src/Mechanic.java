@@ -26,4 +26,7 @@ public class Mechanic<T extends Transport> {
     public String getCompany() {
         return company;
     }
+
+
+
 }
