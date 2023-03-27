@@ -33,18 +33,23 @@ public class Main {
 
         System.out.println(Arrays.toString(list.toArray()));
 
-        Set<String> set = new HashSet<>();
-        set.add("Иван Иванов");
-        set.add("Петр Петров");
-        set.add("Егор Сидоров");
-        set.add("Александр Смирнов");
-        set.add("Александр Смирнов");
-        set.add("Петр Петров");
+
+            Set<String> set = new HashSet<>();
+            set.add("Иван Иванов");
+            set.add("Петр Петров");
+            set.add("Егор Сидоров");
+            set.add("Александр Смирнов");
+            set.add("Александр Смирнов");
+            set.add("Петр Петров");
+
+            Iterator<String> iter = set.iterator();
+            while(iter.hasNext()){
+
+                System.out.println(iter.next());
 
 
-        System.out.println(Arrays.toString(set.toArray()));
-    }
+        }
 
 
-            }
 
+        }}
