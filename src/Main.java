@@ -24,20 +24,25 @@ public class Main {
         DriverD<Bus> antonBus = new DriverD<>("Антон Антонович Автобусов", true, 5);
 
         ArrayList<String> list = new ArrayList<>();
-        list.add("Lada");
-        list.add("Audi");
-        list.add("BMW");
-        list.add("Kia");
+        list.add("Иван Иванов");
+        list.add("Петр Петров");
+        list.add("Егор Сидоров");
+        list.add("Александр Смирнов");
+        list.add("Александр Смирнов");
 
         System.out.println(Arrays.toString(list.toArray()));
 
         Set<String> set = new HashSet<>();
-        set.add("Lada");
-        set.add("Audi");
-        set.add("BMW");
-        set.add("Kia");
+        set.add("Иван Иванов");
+        set.add("Петр Петров");
+        set.add("Егор Сидоров");
+        set.add("Александр Смирнов");
+        set.add("Александр Смирнов");
+
 
         System.out.println(Arrays.toString(set.toArray()));
+    }
 
 
-}}
+            }
+
