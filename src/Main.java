@@ -29,6 +29,7 @@ public class Main {
         list.add("Егор Сидоров");
         list.add("Александр Смирнов");
         list.add("Александр Смирнов");
+        list.add("Петр Петров");
 
         System.out.println(Arrays.toString(list.toArray()));
 
@@ -38,6 +39,7 @@ public class Main {
         set.add("Егор Сидоров");
         set.add("Александр Смирнов");
         set.add("Александр Смирнов");
+        set.add("Петр Петров");
 
 
         System.out.println(Arrays.toString(set.toArray()));
