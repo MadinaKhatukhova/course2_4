@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws NoLicenseException {
-        Mechanic semen = new Mechanic<Car>("Семен Семеныч", "Рога и Копыта");
+        Mechanic semen = new Mechanic<Transport>();
         Sponsor aeroflot = new Sponsor("Аэрофлот", 1_000_000);
 
-        Car lada = new Car("Lada", "Granta", 1.7f, Car.BodyType.SEDAN);
+        Car lada = new Car("Lada", "Grant", 1.7f, Car.BodyType.SEDAN);
         Car audi = new Car("Audi", "A8", 3.0f, Car.BodyType.HATCHBACK);
         Car bmw = new Car("BMW", "Z8", 3.5f, Car.BodyType.COUPE);
         Car kia = new Car("Kia", "Sportage", 4.0f, Car.BodyType.SUV);
@@ -23,33 +23,53 @@ public class Main {
         DriverC<Truck> semenTruck = new DriverC<>("Семен Алексеевич Грузовиков", true, 2);
         DriverD<Bus> antonBus = new DriverD<>("Антон Антонович Автобусов", true, 5);
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Иван Иванов");
-        list.add("Петр Петров");
-        list.add("Егор Сидоров");
-        list.add("Александр Смирнов");
-        list.add("Александр Смирнов");
-        list.add("Петр Петров");
 
-        System.out.println(Arrays.toString(list.toArray()));
+        Mechanic mechanic = new Mechanic();
+        Mechanic.addMechanic("Kia","Артур Иванов");
+        Mechanic.addMechanic("Nissan","Петр Сидоров");
+        Mechanic.addMechanic("Honda","Николай Соболев");
+        Mechanic.addMechanic("Audi","Арсен Арзуманян");
+        Mechanic.addMechanic("Ford","Эдуард Суровый");
+        Mechanic.addMechanic("Mercedes-Benz","Максим Кожевников");
+        Mechanic.addMechanic("Volkswagen","Егор Июльский");
+        Mechanic.addMechanic("Mazda","Ренат Майский");
+        Mechanic.addMechanic("Toyota","Юрий Савичев");
+        Mechanic.addMechanic("Acura","Сергей Леонидович");
+        Mechanic.addMechanic("Infiniti","Иван Герасимов");
+        Mechanic.addMechanic("Lexus","Альберт Эдуардович");
+        Mechanic.addMechanic("Subaru","Олег Валентинович");
+        Mechanic.addMechanic("Chevrolet","Игорь Сергеевич");
+        Mechanic.addMechanic("Dodge","Евгений Виссарионович");
+        Mechanic.addMechanic("Jeep","Никита Покров");
+        Mechanic.addMechanic("Pontiac","Юрий Могучий");
+        Mechanic.addMechanic("Cadillac","Евгений Васильевич");
+        Mechanic.addMechanic("Tesla","Леонид Петрович");
+
+        System.out.println(mechanic);
+
+        CollectionMapStringInteger collectionMapStringInteger= new CollectionMapStringInteger();
+        collectionMapStringInteger.addMap("Str1", 2);
+        collectionMapStringInteger.addMap("Str2", 1);
+        collectionMapStringInteger.addMap("Str1", 5);
+        System.out.println(collectionMapStringInteger);
+    }
 
 
-            Set<String> set = new HashSet<>();
-            set.add("Иван Иванов");
-            set.add("Петр Петров");
-            set.add("Егор Сидоров");
-            set.add("Александр Смирнов");
-            set.add("Александр Смирнов");
-            set.add("Петр Петров");
-
-            Iterator<String> iter = set.iterator();
-            while(iter.hasNext()){
-
-                System.out.println(iter.next());
-
-
+    public static void getEvenNumbers(Set<Integer> integerSet, List<Integer> integerList) {
+        for (Integer integer : integerSet) {
+            if (integer % 2 == 0) {
+                integerList.add(integer);
+            }
         }
+    }
 
+    public static void generateRandom(Set<Integer> integerSet) {
+        Random random = new Random();
+        int i = 0;
+        while (i < 20) {
+            integerSet.add(random.nextInt(1000));
+            i++;
+        }
+    }
 
-
-        }}
+    }
