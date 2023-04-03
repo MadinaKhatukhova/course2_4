@@ -40,6 +40,8 @@ public class Mechanic<T extends Transport> {
     public String toString() {
         return "Автомобиль: " + Mechanic;
     }
+
+
 }
 
 
