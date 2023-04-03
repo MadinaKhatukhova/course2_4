@@ -1,15 +1,11 @@
-import jdk.internal.jimage.ImageStream;
-
-import jdk.internal.org.objectweb.asm.tree.AbstractInsnNode;
-import jdk.internal.org.objectweb.asm.tree.InsnList;
-import sun.net.www.MessageHeader;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws NoLicenseException {
-        Mechanic semen = new Mechanic<Transport>();
-        Mechanic ivan = new Mechanic<Transport>();
+
         Sponsor aeroflot = new Sponsor("Аэрофлот", 1_000_000);
 
         Car lada = new Car("Lada", "Granta", 1.7f, Car.BodyType.SEDAN);
@@ -39,8 +35,9 @@ public class Main {
         Mechanic.addMechanic("Tesla","Леонид Петрович");
         System.out.println(mechanic);
         Map<Transport, List<Mechanic>> map = new HashMap<>();
-        map.put(paz, List.of(semen));
+        Mechanic[] ivan = new Mechanic[0];
         map.put(lada, List.of(ivan));
+        Mechanic[] semen = new Mechanic[0];
         map.put(maz, List.of(semen));
         map.put(kamaz, List.of(semen));
         map.put(lada, List.of(ivan));
@@ -51,7 +48,9 @@ public class Main {
         for (Transport transport: map.keySet()) {
             System.out.println("В мапе присутствует транспорт модели " + paz);
         }
-
+        for ( Map.Entry entry: map.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
 
         CollectionMapStringInteger collectionMapStringInteger= new CollectionMapStringInteger();
         collectionMapStringInteger.addMap("Str1", 3);
@@ -69,13 +68,6 @@ public class Main {
         }
     }
 
-    public static void generateRandom(Set<Integer> integerSet) {
-        Random random = new Random();
-        int i = 0;
-        while (i < 20) {
-            integerSet.add(random.nextInt(1000));
-            i++;
-        }
-    }
 
     }
+
