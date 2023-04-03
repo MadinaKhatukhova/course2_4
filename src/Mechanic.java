@@ -4,8 +4,7 @@ import java.util.Objects;
 public class Mechanic<T extends Transport> {
 
 
-
-    public boolean doService(T transport){
+       public boolean doService(T transport){
         return transport.passDiagnostics();
     }
 

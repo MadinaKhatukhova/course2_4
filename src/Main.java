@@ -1,8 +1,15 @@
+import jdk.internal.jimage.ImageStream;
+
+import jdk.internal.org.objectweb.asm.tree.AbstractInsnNode;
+import jdk.internal.org.objectweb.asm.tree.InsnList;
+import sun.net.www.MessageHeader;
+
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws NoLicenseException {
         Mechanic semen = new Mechanic<Transport>();
+        Mechanic ivan = new Mechanic<Transport>();
         Sponsor aeroflot = new Sponsor("Аэрофлот", 1_000_000);
 
         Car lada = new Car("Lada", "Grant", 1.7f, Car.BodyType.SEDAN);
@@ -24,32 +31,23 @@ public class Main {
         DriverD<Bus> antonBus = new DriverD<>("Антон Антонович Автобусов", true, 5);
 
 
-        Mechanic mechanic = new Mechanic();
-        Mechanic.addMechanic("Kia","Артур Иванов");
-        Mechanic.addMechanic("Nissan","Петр Сидоров");
-        Mechanic.addMechanic("Honda","Николай Соболев");
-        Mechanic.addMechanic("Audi","Арсен Арзуманян");
-        Mechanic.addMechanic("Ford","Эдуард Суровый");
-        Mechanic.addMechanic("Mercedes-Benz","Максим Кожевников");
-        Mechanic.addMechanic("Volkswagen","Егор Июльский");
-        Mechanic.addMechanic("Mazda","Ренат Майский");
-        Mechanic.addMechanic("Toyota","Юрий Савичев");
-        Mechanic.addMechanic("Acura","Сергей Леонидович");
-        Mechanic.addMechanic("Infiniti","Иван Герасимов");
-        Mechanic.addMechanic("Lexus","Альберт Эдуардович");
-        Mechanic.addMechanic("Subaru","Олег Валентинович");
-        Mechanic.addMechanic("Chevrolet","Игорь Сергеевич");
-        Mechanic.addMechanic("Dodge","Евгений Виссарионович");
-        Mechanic.addMechanic("Jeep","Никита Покров");
-        Mechanic.addMechanic("Pontiac","Юрий Могучий");
-        Mechanic.addMechanic("Cadillac","Евгений Васильевич");
-        Mechanic.addMechanic("Tesla","Леонид Петрович");
+        Map<Transport, List<Mechanic>> map = new HashMap<>();
+        map.put(paz, List.of(semen));
+        map.put(lada, List.of(ivan));
+        map.put(maz, List.of(semen));
+        map.put(kamaz, List.of(semen));
+        map.put(lada, List.of(ivan));
+        for (Transport transport: map.keySet()) {
+            System.out.println("В мапе присутствует транспорт модели " + lada);
+        }
 
-        System.out.println(mechanic);
+        for (List<Mechanic> transport: map.values()) {
+            System.out.println("В мапе присутствует механик  " + semen);
+        }
 
         CollectionMapStringInteger collectionMapStringInteger= new CollectionMapStringInteger();
-        collectionMapStringInteger.addMap("Str1", 2);
-        collectionMapStringInteger.addMap("Str2", 1);
+        collectionMapStringInteger.addMap("Str1", 3);
+        collectionMapStringInteger.addMap("Str2", 2);
         collectionMapStringInteger.addMap("Str1", 5);
         System.out.println(collectionMapStringInteger);
     }
